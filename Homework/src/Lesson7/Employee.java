@@ -1,4 +1,4 @@
-package Lesson6;
+package Lesson7;
 
 public class Employee {
     private String fullName;
