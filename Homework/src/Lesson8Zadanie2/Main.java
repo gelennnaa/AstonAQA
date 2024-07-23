@@ -2,15 +2,14 @@ package Lesson8Zadanie2;
 
 public class Main {
     public static void main(String[] args) {
-        Shape circle = new Circle(5, "Red", "Black");
-        Shape rectangle = new Rectangle(4, 7, "Blue", "Green");
-        Shape triangle = new Triangle(3, 4, 5, "Yellow", "Purple");
+        Shape circle = new Circle(7, "Красный", "Белый");
+        Shape rectangle = new Rectangle(5, 9, "Синий", "Чёрный");
+        Shape triangle = new Triangle(6, 7, 8, "Фиолетовый", "Коричневый");
 
         Shape[] shapes = { circle, rectangle, triangle };
 
         for (Shape shape : shapes) {
-            shape.printInfo();
-            System.out.println();
+            System.out.println(shape);
         }
     }
 }

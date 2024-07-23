@@ -1,6 +1,7 @@
 package Lesson8Zadanie1;
 
 public class Bowl {
+
     private int food;
 
     public Bowl(int food) {

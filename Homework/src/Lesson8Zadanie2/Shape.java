@@ -1,19 +1,23 @@
 package Lesson8Zadanie2;
 
-public interface Shape {
-    double calculatePerimeter();
-    double calculateArea();
+public abstract class Shape implements PerimeterCalculable, AreaCalculable {
+    protected String fillColor;
+    protected String borderColor;
 
-    String getFillColor();
-    String getBorderColor();
+    public Shape(String fillColor, String borderColor) {
+        this.fillColor = fillColor;
+        this.borderColor = borderColor;
+    }
 
-    void setFillColor(String color);
-    void setBorderColor(String color);
+    public String getFillColor() {
+        return fillColor;
+    }
 
-    default void printInfo() {
-        System.out.println("Периметр: " + calculatePerimeter());
-        System.out.println("Площадь: " + calculateArea());
-        System.out.println("Цвет заливки: " + getFillColor());
-        System.out.println("Цвет границы: " + getBorderColor());
+    public String getBorderColor() {
+        return borderColor;
+    }
+
+    public String toString() {
+        return "Цвет заливки: " + fillColor + ", Цвет границы: " + borderColor;
     }
 }

@@ -1,12 +1,12 @@
 package Lesson8Zadanie1;
 
-public class Animal {
-    protected String name;
-    protected int maxRunDistance;
-    protected int maxSwimDistance;
-    protected static int animalCount = 0;
-    protected static int catCount = 0;
-    protected static int dogCount = 0;
+public abstract class Animal {
+    private String name;
+    private int maxRunDistance;
+    private int maxSwimDistance;
+    private static int animalCount = 0;
+    private static int catCount = 0;
+    private static int dogCount = 0;
 
     public Animal(String name, int maxRunDistance, int maxSwimDistance) {
         this.name = name;
@@ -15,25 +15,38 @@ public class Animal {
         animalCount++;
     }
 
-    public void run(int distance) {
-        if (distance <= maxRunDistance) {
-            System.out.println(name + " пробежал " + distance + " м.");
-        } else {
-            System.out.println(name + " не может пробежать " + distance + " м.");
-        }
+    public abstract void run(int distance);
+    public abstract void swim(int distance);
+
+    public String getName() {
+        return name;
     }
 
-    public void swim(int distance) {
-        if (maxSwimDistance == 0) {
-            System.out.println(name + " не умеет плавать.");
-        } else if (distance <= maxSwimDistance) {
-            System.out.println(name + " проплыл " + distance + " м.");
-        } else {
-            System.out.println(name + " не может проплыть " + distance + " м.");
-        }
+    public int getMaxRunDistance() {
+        return maxRunDistance;
+    }
+
+    public int getMaxSwimDistance() {
+        return maxSwimDistance;
     }
 
     public static int getAnimalCount() {
         return animalCount;
+    }
+
+    public static int getCatCount() {
+        return catCount;
+    }
+
+    public static int getDogCount() {
+        return dogCount;
+    }
+
+    public static void incrementCatCount() {
+        catCount++;
+    }
+
+    public static void incrementDogCount() {
+        dogCount++;
     }
 }

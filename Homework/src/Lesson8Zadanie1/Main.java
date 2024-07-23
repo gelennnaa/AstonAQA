@@ -22,14 +22,14 @@ public class Main {
 
         for (Cat cat : cats) {
             cat.eat(bowl, 10);
-            System.out.println(cat.name + " сытость: " + cat.isFull());
+            System.out.println(cat.getName() + " сытость: " + cat.isFull());
         }
 
         bowl.addFood(20);
         System.out.println("Насыпали еды в миску. Количество еды: " + bowl.getFood());
 
         System.out.println("Всего животных: " + Animal.getAnimalCount());
-        System.out.println("Всего котов: " + Animal.catCount);
-        System.out.println("Всего собак: " + Animal.dogCount);
+        System.out.println("Всего котов: " + Animal.getCatCount());
+        System.out.println("Всего собак: " + Animal.getDogCount());
     }
 }
