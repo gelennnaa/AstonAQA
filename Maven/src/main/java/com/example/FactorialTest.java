@@ -1,20 +1,22 @@
 package com.example;
 
-import org.junit.jupiter.api.Test;
+mport org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class FactorialTest {
+public class FactorialTest {
 
-    void testFactorialZero() {
-        assertEquals(1, Factorial.calculate(0));
+    public void testFactorial() {
+        assertEquals(1, Factorial.compute(0));
+        assertEquals(1, Factorial.compute(1));
+        assertEquals(2, Factorial.compute(2));
+        assertEquals(6, Factorial.compute(3));
+        assertEquals(24, Factorial.compute(4));
     }
 
-    void testFactorialPositiveNumber() {
-        assertEquals(120, Factorial.calculate(5));
-    }
-
-    void testFactorialNegativeNumber() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> Factorial.calculate(-1));
-        assertEquals("Число не должно быть отрицательным.", exception.getMessage());
+    public void testNegativeNumber() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Factorial.compute(-1);
+        });
+        assertEquals("Number must be non-negative", exception.getMessage());
     }
 }
