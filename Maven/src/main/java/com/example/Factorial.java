@@ -11,4 +11,7 @@ public class Factorial {
         }
         return result;
     }
+
+    public Object getFactorial(int number) {
+    }
 }
