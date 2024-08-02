@@ -9,22 +9,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class FactorialTest {
     private Factorial factorial;
 
+    @BeforeAll
     static void startMsg() {
         System.out.println("Start test");
     }
 
+    @AfterAll
     static void endMsg() {
         System.out.println("End test");
     }
 
+    @BeforeEach
     void beforeEachTest() {
         factorial = new Factorial();
     }
 
+    @AfterEach
     void afterEachTest() {
         factorial = null;
     }
 
+    @Test
     void testFactorial() {
         assertAll("Factorial test",
                 () -> {
